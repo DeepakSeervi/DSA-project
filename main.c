@@ -1,4 +1,4 @@
-\*This program creates a Temporary Row based Database*/
+/*This program creates a Temporary Row based Database*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +15,6 @@ struct row *add_data_to_row(struct row *node)			//This function takes data from 
 	scanf("%d",&node->data);
 	node->next=nullptr;
 	return node;
-
 
 }
 
@@ -36,12 +35,14 @@ show_row()
      {
          for(int j=0;j<columns;j++)
          {
+            
+            create_row=add_data_to_row(create_row);
             if(j==0) 
         {
             start_info->row_head=create_row;
+		    start_info=start_info->next_row;
         }
-            create_row=add_data_to_row(create_row);
-            create_row=create_row->next;
+		 create_row=create_row->next;
         }
 
      }
